@@ -1,0 +1,65 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UAE Coffee Stand</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="game-world">
+        <div id="customer-area">
+            <h3>Customer Order</h3>
+            <div id="customer-order">Order: <span>Waiting...</span></div>
+            <div id="patience-bar-container">
+                <div id="patience-bar"></div>
+            </div>
+        </div>
+
+        <div id="game-area">
+            <div id="pot-station">
+                <h3>Brewing Pot</h3>
+                <div id="pot">
+                    <img src="{{ url_for('static', filename='images/empty-cldrn.png') }}" alt="Brewing Pot" id="pot-img">
+                    <div id="pot-contents"></div>
+                </div>
+                <div id="pot-status">Status: Empty</div>
+                <button id="serve-btn">SERVE!</button>
+            </div>
+
+            <div id="ingredient-station">
+                <h3>Ingredients</h3>
+                <div class="ingredient" data-ingredient="tea">
+                    <img src="{{ url_for('static', filename='images/tea.png') }}" alt="Tea">
+                    <span>Tea</span>
+                </div>
+                <div class="ingredient" data-ingredient="milk">
+                    <img src="{{ url_for('static', filename='images/milk.png') }}" alt="Milk">
+                    <span>Milk</span>
+                </div>
+                <div class="ingredient" data-ingredient="sugar">
+                    <img src="{{ url_for('static', filename='images/sugar.png') }}" alt="Sugar">
+                    <span>Sugar</span>
+                </div>
+                <div class="ingredient" data-ingredient="cardamom">
+                    <img src="{{ url_for('static', filename='images/cardamom.png') }}" alt="Cardamom">
+                    <span>Cardamom</span>
+                </div>
+            </div>
+        </div>
+
+        <div id="score-area">
+            <div id="stats-row">
+                <div>Day: <span id="day">1</span></div>
+                <div>Streak: <span id="streak">0</span></div>
+            </div>
+            <h2>Cash: <span id="score">0</span> AED</h2>
+            <div id="feedback">Welcome! Click ingredients to start.</div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/game.js') }}"></script>
+</body>
+</html>
